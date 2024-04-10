@@ -1,6 +1,6 @@
 import { Pool } from './pg';
 import { PrismaPg } from '@prisma/adapter-pg';
-import { PrismaClient } from './__generated__/edge';
+import { PrismaClient } from './__generated__';
 
 export const prisma = (
   connectionString: string,
