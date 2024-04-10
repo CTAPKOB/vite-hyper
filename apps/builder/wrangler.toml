@@ -1,0 +1,43 @@
+#:schema ./wrangler.schema
+
+name = "test-builder"
+
+compatibility_date = "2024-04-09"
+compatibility_flags = [ "nodejs_compat" ]
+pages_build_output_dir = "./build"
+
+[[hyperdrive]]
+binding = "HYPERDRIVE"
+id   = "a0e7e5f8c88149e4a2c7232e23716bc7"
+localConnectionString = "postgresql://user:pass@localhost:5432/webstudio"
+
+[[env.preview.hyperdrive]]
+binding = "HYPERDRIVE"
+id   = "a0e7e5f8c88149e4a2c7232e23716bc7"
+localConnectionString = "postgresql://user:pass@localhost:5432/webstudio"
+
+[[env.production.hyperdrive]]
+binding = "HYPERDRIVE"
+id   = "a0e7e5f8c88149e4a2c7232e23716bc7"
+
+[placement]
+mode = "off"
+
+[env.preview.placement]
+mode = "off"
+
+[env.production.placement]
+mode = "off"
+
+
+[vars]
+MY_VARIABLE = "lcoal_value"
+# For use with `pnpm dev` until hyperdrive will be supported by remix cloudflare dev plugin
+DEV_MODE_DATABASE_URL="postgresql://user:pass@localhost:5432/webstudio"
+
+[env.preview.vars]
+MY_VARIABLE = "preview_value"
+
+[env.production.vars]
+MY_VARIABLE = "eee-prod_value"
+

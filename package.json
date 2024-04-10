@@ -1,0 +1,17 @@
+{
+  "name": "CTAPKOB",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "18",
+    "pnpm": "^8.15.6",
+    "yarn": "This project is configured to use pnpm"
+  }
+}

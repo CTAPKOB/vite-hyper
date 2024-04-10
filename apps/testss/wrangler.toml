@@ -1,0 +1,14 @@
+name = "hyper-test"
+account_id = "4453161ad26e32a617c6c6d4b837c9d9"
+ compatibility_date = "2024-04-10"
+
+node_compat = true # required for database drivers to function
+main = "src/index.ts"
+
+[[hyperdrive]]
+binding = "HYPERDRIVE"
+id   = "a0e7e5f8c88149e4a2c7232e23716bc7"
+
+[[routes]]
+pattern = "test-test-test-hyper.webstudio.is/*"
+zone_name = "webstudio.is"

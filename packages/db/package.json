@@ -1,0 +1,23 @@
+{
+  "name": "@CTAPKOB/db",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "_main": "src/index.ts",
+  "exports": {
+    "webstudio": "./src/prisma.ts"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/adapter-pg": "^5.12.1",
+    "@prisma/client": "5.12.1",
+    "@types/pg": "^8.11.5",
+    "pg": "^8.11.5",
+    "prisma": "^5.12.1"
+  }
+}
