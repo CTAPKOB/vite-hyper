@@ -1,3 +1,14 @@
+# WHATS NEEDED
+
+following should work
+
+```bash
+# Directory ./apps/builder
+pnpm build
+pnpm start
+# then open in browser
+```
+
 ```bash
 pnpm build
 rm -rf dist
