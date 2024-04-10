@@ -70,8 +70,6 @@ export default defineConfig(({ mode }) => ({
       ),
 
       util: 'node:util',
-      '.prisma/client/edge':
-        '../../node_modules/.pnpm/@prisma+client@5.12.1_prisma@5.12.1/node_modules/@prisma/client/edge.js',
     },
   },
 }));
