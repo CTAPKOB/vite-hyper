@@ -32,7 +32,10 @@ export async function loader({ context }: LoaderFunctionArgs) {
     context.cloudflare.env.DEV_MODE_DATABASE_URL;
   console.log('connStr:', connStr);
 
-  const user = await prisma(connStr, context.cloudflare.ctx.waitUntil); //.user.findFirst();
+  const user = await prisma(
+    connStr,
+    context.cloudflare.ctx.waitUntil
+  ).user.findFirst();
 
   console.log('END', user);
 

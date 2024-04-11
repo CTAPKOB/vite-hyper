@@ -5,17 +5,32 @@ import {
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { fileURLToPath } from 'url';
+import commonjs from '@rollup/plugin-commonjs';
+import wasm from 'vite-plugin-wasm';
 
 export default defineConfig(({ mode }) => ({
   ssr: {},
-  plugins: [remixCloudflareDevProxy(), remix(), tsconfigPaths()],
+  plugins: [
+    remixCloudflareDevProxy(),
+    remix(),
+    tsconfigPaths(),
+
+    commonjs({
+      include: ['**/__generated__/**'],
+    }),
+    wasm(),
+  ],
   define: {
     'process.env.NODE_ENV': JSON.stringify(mode),
+  },
 
-    // process: JSON.stringify({ env: {} }),
+  optimizeDeps: {
+    //include: ['esm-dep > cjs-dep'],
+    // include: ['@prisma/client', 'pg', '**/./__generated__/**'],
   },
 
   build: {
+    target: 'esnext',
     rollupOptions: {
       external: ['cloudflare:sockets'],
     },
@@ -55,8 +70,6 @@ export default defineConfig(({ mode }) => ({
       ),
 
       util: 'node:util',
-      // '.prisma/client/edge':
-      //  '../../node_modules/.pnpm/@prisma+client@5.12.1_prisma@5.12.1/node_modules/@prisma/client/edge.js',
     },
   },
 }));

@@ -19,5 +19,8 @@
     "@types/pg": "^8.11.5",
     "pg": "^8.11.5",
     "prisma": "^5.12.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.2"
   }
 }
