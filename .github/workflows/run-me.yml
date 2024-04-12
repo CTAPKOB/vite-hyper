@@ -20,3 +20,8 @@ jobs:
           pwd
           ls -la
           printenv
+
+      - name: EEE
+        working-directory: /cli/packages/cli
+        run: |
+          pnpm run run-me
