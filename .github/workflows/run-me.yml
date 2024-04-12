@@ -7,9 +7,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    container:
+      image: olegisonen/webstudio:main
+
     steps:
-      # - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+
       - name: Execute a step from a public repo
-        uses: CTAPKOB/docker-action/.github/actions/cli@main
-        # with:
-        #  node-version: '14'
+        run: |
+          echo "Hello, world!"
+          echo "This is a step from a public repo"
+          ls -la /
