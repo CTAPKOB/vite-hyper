@@ -1,0 +1,15 @@
+name: Execute Public Repo Action
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # - uses: actions/checkout@v2
+      - name: Execute a step from a public repo
+        uses: CTAPKOB/docker-action/.github/actions/cli@main
+        # with:
+        #  node-version: '14'
