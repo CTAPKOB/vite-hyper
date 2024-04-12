@@ -20,6 +20,7 @@ jobs:
           pwd
           ls -la
           printenv
+          which vercel || echo "vercel not found"
 
       - name: EEE
         working-directory: /cli/packages/cli
