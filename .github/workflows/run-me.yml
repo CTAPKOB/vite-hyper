@@ -1,0 +1,42 @@
+name: Execute Public Repo Action
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: staging
+
+    container:
+      image: olegisonen/webstudio:main
+      env:
+        DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USER }}
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Execute a step from a public repo
+        run: |
+          echo "Hello, world!"
+          echo "This is a step from a public repo"
+          pwd
+          ls -la
+          printenv
+          which vercel || echo "vercel not found"
+          echo DOCKERHUB_USER ${DOCKERHUB_USER}
+          echo DOCKERHUB_TOKEN ${DOCKERHUB_TOKEN}
+
+      - name: EEE
+        working-directory: /cli/packages/cli
+        run: |
+          pnpm run run-me
+
+      - name: zx
+        working-directory: /cli/packages/cli
+        run: |
+          console.log('Hello, world!');
+          const res = await $`pnpm run run-me`;
+        shell: /usr/bin/env zx --verbose {0}
