@@ -39,5 +39,4 @@ jobs:
         run: |
           console.log('Hello, world!');
           const res = await $`pnpm run run-me`;
-          console.log('done', res);
-        shell: /usr/bin/env zx {0}
+        shell: /usr/bin/env zx --verbose {0}
