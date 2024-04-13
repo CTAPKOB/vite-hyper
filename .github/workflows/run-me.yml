@@ -26,8 +26,8 @@ jobs:
           ls -la
           printenv
           which vercel || echo "vercel not found"
-          print DOCKERHUB_USER ${DOCKERHUB_USER}
-          print DOCKERHUB_TOKEN ${DOCKERHUB_TOKEN}
+          echo DOCKERHUB_USER ${DOCKERHUB_USER}
+          echo DOCKERHUB_TOKEN ${DOCKERHUB_TOKEN}
 
       - name: EEE
         working-directory: /cli/packages/cli
