@@ -38,6 +38,6 @@ jobs:
         working-directory: /cli/packages/cli
         run: |
           console.log('Hello, world!');
-          await $`pnpm run run-me`;
-          console.log('done');
+          const res = await $`pnpm run run-me`;
+          console.log('done', res);
         shell: /usr/bin/env zx {0}
